@@ -1,0 +1,9 @@
+/* stickyHeader.css - Three little styles that make the stickyHeader script work. */
+.hide {
+display:none;
+}
+div.stickyHeader {
+position:fixed;
+_position:absolute;
+top:0;
+}
