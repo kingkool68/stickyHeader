@@ -1,4 +1,4 @@
-stickyHeader.js makes table headers stick to the top of the viewport when scrolling down long HTML data tables.
+stickyHeader.js makes table headers stick to the top of the viewport when scrolling down long HTML data tables. Slides for the presentation I gave at the September DC jQuery Meetup can be found at http://www.slideshare.net/kingkool68/stickyheaderjs
 
 Versions for
 * jQuery
@@ -11,7 +11,7 @@ To get started just include:
 * The two CSS rules to your stylesheet
 * class="stickyHeader" to any table that you want to have a stickyHeader
 
-== CSS Rules ==
+== CSS Rules
 
 .hide {
   display:none;
@@ -22,6 +22,6 @@ div.stickyHeader {
   _position:absolute;
 }
 
-== Demos ==
+== Demos
 * http://dev.kingkool68.com/stickyHeader/
 * http://features.pewforum.org/muslim-population/?sort=Pop1990&order=ASC
