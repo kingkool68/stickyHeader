@@ -27,5 +27,5 @@ To get started just include:
 ```
 
 ## Demos
-* http://dev.kingkool68.com/stickyHeader/
+* http://dev.kingkool68.com/stickyHeader/jquery.htm
 * http://features.pewforum.org/muslim-population/?sort=Pop1990&order=ASC
