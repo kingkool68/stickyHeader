@@ -2,9 +2,10 @@ $(document).ready(function () {
 	var tables = $('table.stickyHeader');
 	tables.each(function(i){
 		var table = tables[i];
+		var table = $(table).clone(true).empty();
 		var theadClone = $(table).find('thead').clone(true);
 		var stickyHeader =  $('<div></div>').addClass('stickyHeader hide');
-		stickyHeader.append($('<table></table')).find('table').append(theadClone);
+		stickyHeader.append(tableClone).find('table').append(theadClone);
 		$(table).after(stickyHeader);
 		
 		var tableHeight = $(table).height();
