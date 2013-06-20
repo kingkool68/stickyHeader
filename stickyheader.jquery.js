@@ -4,7 +4,7 @@ $(document).ready(function () {
 		var table = tables[i];
 		var tableClone = $(table).clone(true).empty().removeClass('stickyHeader');
 		var theadClone = $(table).find('thead').clone(true);
-		var stickyHeader =  $('<div></div>').addClass('stickyHeader hide');
+		var stickyHeader =  $('<div></div>').addClass('stickyHeader hide').attr('aria-hidden', 'true');
 		stickyHeader.append(tableClone).find('table').append(theadClone);
 		$(table).after(stickyHeader);
 		
