@@ -21,7 +21,9 @@ dojo.addOnLoad(window, function(){
 		
 		var stickyHeaderCells = dojo.query(stickyHeader).query('th');
 		dojo.style(stickyHeader[0],'width', tableWidth + 'px');
-		for (i=0; i<headerCells.length; i++) {
+
+		var cellWidths = [];
+		for (var i = 0, l = headerCells.length; i < l; i++) {
 			var headerCell = headerCells[i];
 			var paddingLeft = dojo.style(headerCell,'padding-left');
 			var paddingRight = dojo.style(headerCell,'padding-right');
@@ -33,7 +35,11 @@ dojo.addOnLoad(window, function(){
 			var cellWidth = width - paddingLeft - paddingRight - borderLeft - borderRight;
 			cellWidth = cellWidth + "px";
 			document.title = "cellwidth: " + cellWidth + "; width: " + width + "; paddingLeft: " + paddingLeft + "; paddingRight: " + paddingRight + "; borderLeft: " + borderLeft + "; borderRight: " + borderRight;
-			dojo.style(stickyHeaderCells[i],'width', cellWidth);
+			cellWidths[i] = cellWidth;
+		}
+
+		for (var i = 0, l = headerCells.length; i < l; i++) {
+			dojo.style(stickyHeaderCells[i],'width', cellWidths[i]);
 		}
 		
 		var cutoffTop = dojo.coords(table, 'includeScroll').t
