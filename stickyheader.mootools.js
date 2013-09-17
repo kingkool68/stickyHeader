@@ -21,8 +21,9 @@ window.addEvent('domready', function() {
 		
 		var stickyHeaderCells = stickyHeader.getElements('th');
 		stickyHeader.setStyle('width', tableWidth);
-		
-		for (i=0; i<headerCells.length; i++) {
+
+		var cellWidths = [];
+		for (var i = 0, l = headerCells.length; i < l; i++) {
 			var headerCell = headerCells[i]
 			var paddingLeft = headerCell.getStyle('padding-left').toInt();
 			var paddingRight = headerCell.getStyle('padding-right').toInt();
@@ -34,8 +35,13 @@ window.addEvent('domready', function() {
 			var cellWidth = width + paddingLeft + paddingRight + borderLeft + borderRight;
 			cellWidth = cellWidth + "px";
 			document.title = "cellwidth: " + cellWidth + "; width: " + width + "; paddingLeft: " + paddingLeft + "; paddingRight: " + paddingRight + "; borderLeft: " + borderLeft + "; borderRight: " + borderRight;
-			stickyHeaderCells[i].setStyle('width', cellWidth);
+			cellWidths[i] = cellWidth;
 		}
+		
+		for (var i = 0, l = headerCells.length; i < l; i++) {
+			stickyHeaderCells[i].setStyle('width', cellWidths[i]);
+		}
+
 		var cutoffTop = table.getCoordinates().top;
 		var cutoffBottom = tableHeight + cutoffTop - headerCellHeight;
 		

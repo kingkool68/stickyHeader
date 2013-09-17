@@ -21,11 +21,12 @@ $(document).ready(function () {
 		
 		var stickyHeaderCells = stickyHeader.find('th');
 		stickyHeader.css('width', tableWidth);
-		
-		for (i=0; i<headerCells.length; i++) {
-			var headerCell = $(headerCells[i]);
-			var cellWidth = headerCell.width();
-			$(stickyHeaderCells[i]).css('width', cellWidth);
+		var cellWidths = [];
+		for (var i = 0, l = headerCells.length; i < l; i++) {
+			cellWidths[i] = $(headerCells[i]).width();
+		}
+		for (var i = 0, l = headerCells.length; i < l; i++) {
+			$(stickyHeaderCells[i]).css('width', cellWidths[i]);
 		}
 		
 		var cutoffTop = $(table).offset().top;

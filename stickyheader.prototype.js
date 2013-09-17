@@ -18,7 +18,8 @@ Event.observe(window,'load',function() {
 		var stickyHeaderCells = stickyHeader.select('th')
 		stickyHeader.style.width = tableWidth + 'px';
 
-		for (i=0; i<headerCells.length; i++) {
+		var cellWidths = [];
+		for (var i = 0, l = headerCells.length; i < l; i++) {
 			var paddingLeft = headerCells[i].getStyle('padding-left').replace(/px/ig,"");
 			var paddingRight = headerCells[i].getStyle('padding-right').replace(/px/ig,"");
 			var borderLeft = headerCells[i].getStyle('border-left-width').replace(/px/ig,"");
@@ -29,8 +30,11 @@ Event.observe(window,'load',function() {
 			var cellWidth = width - paddingLeft - paddingRight - borderLeft - borderRight;
 			document.title = "cellwidth: " + cellWidth + "; width: " + width + "; paddingLeft: " + paddingLeft + "; paddingRight: " + paddingRight + "; borderLeft: " + borderLeft + "; borderRight: " + borderRight;
 			cellWidth = cellWidth + "px";
-			stickyHeaderCells[i].setStyle({'width':cellWidth});
+			cellWidths[i] = cellWidth;
+		}
 
+		for (var i = 0, l = headerCells.length; i < l; i++) {
+			stickyHeaderCells[i].setStyle({ 'width': cellWidths[i] });
 		}
 
 		var cutoffTop = table.cumulativeOffset()[1];
