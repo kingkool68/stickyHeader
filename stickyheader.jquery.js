@@ -1,4 +1,4 @@
-$(document).ready(function () {
+jQuery(document).ready(function ($) {
 	var tables = $('table.stickyHeader');
 	tables.each(function(i){
 		var table = tables[i];
